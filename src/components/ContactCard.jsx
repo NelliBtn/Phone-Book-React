@@ -1,6 +1,8 @@
+import "./ContactCard.scss";
+
 const ContactCard = () => {
   return (
-    <div>
+    <div className="contact-card">
       I am a contact card!
     </div>
   )

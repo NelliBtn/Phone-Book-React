@@ -1,13 +1,16 @@
-import ContactCard from "./ContactCard"
+import ContactCard from "./ContactCard";
+import "./ContactsList.scss";
 
 const ContactsList = () => {
   return(
-    <div>
-      I am a list of Contacts:
+    <>
+    <h1>I am a list of Contacts:</h1>
+    <div className="contact-list">
       <ContactCard />
       <ContactCard />
       <ContactCard />
     </div>
+    </>
   )
 }
 
