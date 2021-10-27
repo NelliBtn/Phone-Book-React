@@ -5,11 +5,19 @@ const ContactsList = () => {
   return(
     <>
     <h1>I am a list of Contacts:</h1>
-    <div className="contact-list">
+    
+    <section>
+      <form>
+        <label >Search: </label>
+        <input type="text" placeholder="Type here to search"></input>
+      </form>
+    </section>
+
+    <section className="contact-list">
       <ContactCard />
       <ContactCard />
       <ContactCard />
-    </div>
+    </section>
     </>
   )
 }
