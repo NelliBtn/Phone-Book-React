@@ -11,6 +11,9 @@ const ContactCard = ({name, image, phone}) => {
         <li>New York</li>
       </ul>
 
+      <button>Change</button>
+      <button>Delete</button>
+
     </div>
   )
 }
