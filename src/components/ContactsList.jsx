@@ -39,6 +39,13 @@ const ContactsList = () => {
 
   const display = contacts.length === 0 ? <h3>Your phone book is empty.</h3> : contactsParsed;
 
+  // add new contact function
+  // allow to add add custom fields
+  // delete contact function
+  // record the history of changes
+  // add search fucntion
+
+
   return(
     <>
     <section className="contacts-navigation">
