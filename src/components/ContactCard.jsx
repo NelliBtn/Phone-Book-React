@@ -1,13 +1,13 @@
 import "./ContactCard.scss";
 
-const ContactCard = () => {
+const ContactCard = ({name, image, phone}) => {
   return (
     <div className="contact-card">
-      <img className="contact-photo" alt="Contact photo" src="https://randomuser.me/api/portraits/women/26.jpg"></img>
+      <img className="contact-photo" alt="Contact photo" src={image}></img>
 
       <ul className="contact-info">
-        <li><h4 className="name">Name</h4></li>
-        <li className="phone-number">12345678</li>
+        <li><h4 className="name">{name}</h4></li>
+        <li className="phone-number">{phone}</li>
         <li>New York</li>
       </ul>
 
