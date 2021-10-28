@@ -1,4 +1,6 @@
+//components
 import ContactsList from './components/ContactsList';
+//styles
 import './App.scss';
 
 function App() {
