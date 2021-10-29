@@ -1,6 +1,7 @@
 import { useState } from 'react';
 
 import ContactCard from "./ContactCard";
+import NewContactForm from './NewContactForm';
 import "./ContactsList.scss";
 
 const ContactsList = () => {
@@ -50,11 +51,16 @@ const ContactsList = () => {
     <>
     <section className="contacts-navigation">
       <form className="search-form">
-        <label >Search: </label>
-        <input className="search-input" type="text" placeholder="Type here to search"></input>
+        <div className="label-input-div">
+          <label >Search: </label>
+          <input className="search-input" type="text" placeholder="Type here to search"></input>
+        </div>
       </form>
-      <button className="add-contact-btn"> Add contact </button>
+
+        <button type="button" class="btn btn-warning">New Contact</button>
     </section>
+
+      <NewContactForm />
 
     <section className="contact-list"> {display} </section>
     </>
