@@ -13,6 +13,7 @@ const ContactCard = ({name, image, phone}) => {
 
       <button>Change</button>
       <button>Delete</button>
+      <button>History</button>
 
     </div>
   )
