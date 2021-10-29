@@ -1,8 +1,34 @@
 .app {
+  margin-top: 20px;
   display: flex;
   flex-direction: column;
   justify-content: center;
   text-align: center;
-
   font-family: 'Montserrat', sans-serif;
+
+  button {
+    margin-top: 5px;
+  }
+
+  
+  .label-input-div {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    margin-right: 50px;
+  }
+
+
+  input {
+    font-family: 'Montserrat';
+    height: 2.5em;
+    width: 200px;
+    font-size: 0.8em;
+  }
+
+  label {
+    font-size: 0.5em;
+    font-weight: 600;
+    padding-bottom: 2px;
+  }
 }
