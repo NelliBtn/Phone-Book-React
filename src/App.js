@@ -10,6 +10,7 @@ import './App.scss';
 
 function App() {
 
+  // list of all existing contacts
   const [contacts, setContacts] = useState([
     {
       id: 1,
@@ -31,11 +32,17 @@ function App() {
     },
   ]);
 
+  // manupulating 'Create new contact' form
   const [form, setForm] = useState(false);
   const showForm = () => {
     setForm(true);
   }
+  const hideForm = () => {
+    setForm(false);
+    setContact(initialContact);
+  }
 
+  // creating new contact
   const initialContact = {
     id: Date.now(),
     image: 'http://cdn.shopify.com/s/files/1/1061/1924/products/Flushed_Face_Emoji_grande.png?v=1571606037',
@@ -53,7 +60,7 @@ function App() {
     setForm(false);
   }
 
-  // add new contact function
+
   // allow to add add custom fields
   // delete contact function
   // record the history of changes
@@ -63,7 +70,7 @@ function App() {
     <div className="app">
       <h1>My Phone Book</h1>
       <ContactsNavigation showForm={showForm} form={form} />
-      {form && <NewContactForm contact={contact} setContact={setContact} addContact={addContact}/>}
+      {form && <NewContactForm contact={contact} setContact={setContact} addContact={addContact} hideForm={hideForm}/>}
       <ContactsList contacts={contacts}/>
     </div>
   );

@@ -1,6 +1,6 @@
 import './ContactsNavigation.scss'
 
-const ContactsNavigation = ({showForm}) => {
+const ContactsNavigation = ({showForm, form}) => {
 
   return (
     <section className="contacts-navigation">
@@ -10,7 +10,9 @@ const ContactsNavigation = ({showForm}) => {
           <input className="search-input" type="text" placeholder="Type here to search"></input>
         </div>
       </form>
-      <button type="button" onClick={showForm} className="btn btn-warning">New Contact</button>
+      {!form && (
+        <button type="button" onClick={showForm} className="btn btn-warning">New Contact</button>
+      )}
     </section>
   )
 }
