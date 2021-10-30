@@ -1,20 +1,3 @@
-.contacts-navigation {
-  width: 100%;
-  height: 100px;
-  margin: 10px;
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-  justify-content: space-around;
-  background-color: lightgrey;
-
-  .add-contact-btn {
-    font-family: 'Montserrat';
-    width: auto;
-    padding: 5px 10px;
-  }
-}
-
 .contact-list {
   display: flex;
   flex-wrap: wrap;
