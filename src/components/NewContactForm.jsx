@@ -1,7 +1,7 @@
 import { useState } from 'react';
 import './NewContactForm.scss';
 
-const NewContactForm = ({addContact, contact, setContact}) => {
+const NewContactForm = ({addContact, contact, setContact, hideForm}) => {
 
   const handleChange = (e) => {
     e.preventDefault();
@@ -28,6 +28,7 @@ const NewContactForm = ({addContact, contact, setContact}) => {
         </div>
         <br/>
         <button type="submit" className="btn btn-warning">Create</button>
+        <button type="button" onClick={hideForm}className="btn btn-danger">Cancel</button>
       </form>
     </section>
   )
