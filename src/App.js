@@ -36,20 +36,34 @@ function App() {
     setForm(true);
   }
 
+  const initialContact = {
+    id: Date.now(),
+    image: 'https://i.etsystatic.com/21753258/r/il/4c7004/3266348763/il_1588xN.3266348763_zspv.jpg',
+    name: '',
+    phone: '',
+    custom: ''
+  }
+  const [contact, setContact] = useState(initialContact)
+
+  const addContact = (e) => {
+    e.preventDefault();
+    const newContacts = [...contacts, contact];
+    setContacts(newContacts);
+    setContact(initialContact);
+    console.log(contact)
+  }
+
   // add new contact function
   // allow to add add custom fields
   // delete contact function
   // record the history of changes
   // add search fucntion
 
-
-
-
   return (
     <div className="app">
       <h1>My Phone Book</h1>
       <ContactsNavigation showForm={showForm} />
-      {form && <NewContactForm />}
+      {form && <NewContactForm contact={contact} setContact={setContact} addContact={addContact}/>}
       <ContactsList contacts={contacts}/>
     </div>
   );

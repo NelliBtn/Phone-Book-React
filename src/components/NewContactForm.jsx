@@ -1,23 +1,33 @@
+import { useState } from 'react';
 import './NewContactForm.scss';
 
-const NewContactForm = () => {
+const NewContactForm = ({addContact, contact, setContact}) => {
+
+  const handleChange = (e) => {
+    e.preventDefault();
+    setContact({
+      ...contact,
+      [e.target.name]: e.target.value 
+    })
+  }
+
   return (
     <section>
-      <form className='new-contact-form'>
+      <form className='new-contact-form' onSubmit={(e) => addContact(e)}>
         <div className='label-input-div'>
           <label>Name:</label>
-          <input type='text' placeholder='Enter name'></input>
+          <input type='text' name='name' value={contact.name} onChange={handleChange} placeholder='Enter name'></input>
         </div>
         <div className='label-input-div'>
-          <label>Number:</label>
-          <input type='text' placeholder='Enter phone number'></input>
+          <label>Phone:</label>
+          <input type='tel' name='phone' value={contact.phone} onChange={handleChange} placeholder='Enter phone number'></input>
         </div>
         <div className='label-input-div'>
           <label>Custom:</label>
-          <input type='text' placeholder='Enter whatever'></input>
+          <input type='text' name='custom' value={contact.custom} onChange={handleChange} placeholder='Enter whatever'></input>
         </div>
         <br/>
-        <button type="button" class="btn btn-warning">Create</button>
+        <button type="submit" className="btn btn-warning">Create</button>
       </form>
     </section>
   )
