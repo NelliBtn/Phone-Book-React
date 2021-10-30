@@ -50,7 +50,7 @@ function App() {
     const newContacts = [...contacts, contact];
     setContacts(newContacts);
     setContact(initialContact);
-    console.log(contact)
+    setForm(false);
   }
 
   // add new contact function
@@ -62,7 +62,7 @@ function App() {
   return (
     <div className="app">
       <h1>My Phone Book</h1>
-      <ContactsNavigation showForm={showForm} />
+      <ContactsNavigation showForm={showForm} form={form} />
       {form && <NewContactForm contact={contact} setContact={setContact} addContact={addContact}/>}
       <ContactsList contacts={contacts}/>
     </div>
