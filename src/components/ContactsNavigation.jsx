@@ -10,7 +10,7 @@ const ContactsNavigation = ({showForm}) => {
           <input className="search-input" type="text" placeholder="Type here to search"></input>
         </div>
       </form>
-      <button type="button" onClick={showForm} class="btn btn-warning">New Contact</button>
+      <button type="button" onClick={showForm} className="btn btn-warning">New Contact</button>
     </section>
   )
 }
