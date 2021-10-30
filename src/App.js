@@ -21,13 +21,13 @@ function App() {
       id: 2,
       name: "Bob",
       phone: "783-226-885",
-      image: "https://randomuser.me/api/portraits/women/26.jpg"
+      image: "https://randomuser.me/api/portraits/men/60.jpg"
     },
     {
       id: 3,
       name: "John",
       phone: "903-216-537",
-      image: "https://randomuser.me/api/portraits/women/26.jpg"
+      image: "https://randomuser.me/api/portraits/men/50.jpg"
     },
   ]);
 
@@ -38,7 +38,7 @@ function App() {
 
   const initialContact = {
     id: Date.now(),
-    image: 'https://i.etsystatic.com/21753258/r/il/4c7004/3266348763/il_1588xN.3266348763_zspv.jpg',
+    image: 'http://cdn.shopify.com/s/files/1/1061/1924/products/Flushed_Face_Emoji_grande.png?v=1571606037',
     name: '',
     phone: '',
     custom: ''
