@@ -3,15 +3,17 @@ import ContactCard from "./ContactCard";
 import "./ContactsList.scss";
 
 
-const ContactsList = ({contacts}) => {
+const ContactsList = ({contacts, onDelete}) => {
 
   const contactsParsed = contacts.map(contact => {
     return (
       <ContactCard 
         key={contact.id}
+        id={contact.id}
         image={contact.image}
         name={contact.name}
         phone={contact.phone}
+        onDelete={onDelete}
       />
     )
   })
