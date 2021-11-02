@@ -40,7 +40,11 @@ function App() {
   const hideForm = () => {
     setForm(false);
     setContact(initialContact);
+    setError();
   }
+
+  // set error when creating a new contact
+  const [error, setError] = useState();
 
   // creating new contact
   const initialContact = {
@@ -54,12 +58,17 @@ function App() {
 
   const addContact = (e) => {
     e.preventDefault();
-    const newContacts = [...contacts, contact];
-    setContacts(newContacts);
-    setContact(initialContact);
-    setForm(false);
+    if (contact.name && contact.phone) {
+      const newContacts = [...contacts, contact];
+      setContacts(newContacts);
+      setContact(initialContact);
+      setForm(false);
+      setError();
+    } else {
+      // show error
+      setError('Fill out all required fields, please.')
+    }
   }
-
 
   // allow to add add custom fields
   // delete contact function
@@ -70,7 +79,7 @@ function App() {
     <div className="app">
       <h1>My Phone Book</h1>
       <ContactsNavigation showForm={showForm} form={form} />
-      {form && <NewContactForm contact={contact} setContact={setContact} addContact={addContact} hideForm={hideForm}/>}
+      {form && <NewContactForm contact={contact} setContact={setContact} addContact={addContact} hideForm={hideForm} error={error}/>}
       <ContactsList contacts={contacts}/>
     </div>
   );
