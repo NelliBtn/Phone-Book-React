@@ -1,6 +1,7 @@
 import "./ContactCard.scss";
 
-const ContactCard = ({name, image, phone}) => {
+const ContactCard = ({name, image, phone, id, onDelete }) => {
+
   return (
     <div className="contact-card">
       <img className="contact-photo" alt="Contact photo" src={image}></img>
@@ -12,7 +13,7 @@ const ContactCard = ({name, image, phone}) => {
       </ul>
 
       <button>Change</button>
-      <button>Delete</button>
+      <button type='submit' onClick={(e) => onDelete(e, id)}>Delete</button>
       <button>History</button>
 
     </div>
