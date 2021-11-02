@@ -1,8 +1,9 @@
 import { useState } from 'react';
 import './NewContactForm.scss';
 
-const NewContactForm = ({addContact, contact, setContact, hideForm}) => {
+const NewContactForm = ({addContact, contact, setContact, hideForm, error}) => {
 
+  // set current contact on change
   const handleChange = (e) => {
     e.preventDefault();
     setContact({
@@ -12,7 +13,7 @@ const NewContactForm = ({addContact, contact, setContact, hideForm}) => {
   }
 
   return (
-    <section>
+    <section className="new-contact-section">
       <form className='new-contact-form' onSubmit={(e) => addContact(e)}>
         <div className='label-input-div'>
           <label>Name:</label>
@@ -30,6 +31,7 @@ const NewContactForm = ({addContact, contact, setContact, hideForm}) => {
         <button type="submit" className="btn btn-warning">Create</button>
         <button type="button" onClick={hideForm}className="btn btn-danger">Cancel</button>
       </form>
+      {error &&<h6 className="error">{error}</h6>}
     </section>
   )
 }
