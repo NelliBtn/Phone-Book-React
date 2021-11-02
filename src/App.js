@@ -70,6 +70,18 @@ function App() {
     }
   }
 
+  // delete contact
+  const onDelete = (e, id) => {
+    e.preventDefault();
+    // create a copy of contacts
+    const contactsCopy = [...contacts];
+    // find a contact to delete by id
+    const deleteContact = contactsCopy.find(contact => contact.id === id);
+    const index = contactsCopy.indexOf(deleteContact);
+    contactsCopy.splice(index, 1);
+    setContacts([...contactsCopy]);
+  }
+
   // allow to add add custom fields
   // delete contact function
   // record the history of changes
@@ -80,7 +92,7 @@ function App() {
       <h1>My Phone Book</h1>
       <ContactsNavigation showForm={showForm} form={form} />
       {form && <NewContactForm contact={contact} setContact={setContact} addContact={addContact} hideForm={hideForm} error={error}/>}
-      <ContactsList contacts={contacts}/>
+      <ContactsList contacts={contacts} onDelete={onDelete}/>
     </div>
   );
 }
