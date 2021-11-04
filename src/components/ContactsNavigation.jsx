@@ -5,10 +5,8 @@ const ContactsNavigation = ({showForm, form}) => {
   return (
     <section className="contacts-navigation">
       <form className="search-form">
-        <div className="label-input-div">
           <label >Search: </label>
           <input className="search-input" type="text" placeholder="Type here to search"></input>
-        </div>
       </form>
       {!form && (
         <button type="button" onClick={showForm} className="btn btn-warning">New Contact</button>
