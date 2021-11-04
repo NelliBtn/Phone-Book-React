@@ -2,7 +2,7 @@ import { useState } from 'react';
 import ChangeForm from './ChangeForm'
 import "./ContactCard.scss";
 
-const ContactCard = ({name, image, phone, id, custom, onDelete, contact, setInitContact }) => {
+const ContactCard = ({ name, image, phone, id, custom, onDelete, contact, changeContact }) => {
 
   const [changeForm, setChangeForm] = useState(false);
   const handleChange = () => {
@@ -13,7 +13,7 @@ const ContactCard = ({name, image, phone, id, custom, onDelete, contact, setInit
   return (
     <div className="contact-card">
       {changeForm && (
-        <ChangeForm contact={contact} setInitContact={setInitContact}/>
+        <ChangeForm contact={contact} changeContact={changeContact}/>
       )}
       {!changeForm && (
         <>
