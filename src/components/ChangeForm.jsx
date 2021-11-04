@@ -1,8 +1,8 @@
-const ChangeForm = ({contact, setContact}) => {
+const ChangeForm = ({contact, setInitContact}) => {
 
   const handleChange = (e) => {
     e.preventDefault();
-    setContact({
+    setInitContact({
       ...contact,
       [e.target.name]: e.target.value
     })
