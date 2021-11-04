@@ -5,6 +5,10 @@
   display: flex;
   flex-direction: row;
   align-items: center;
-  justify-content: center;
+  justify-content: space-around;
   background-color: lightgrey;
+
+  .search-input {
+    margin-left: 20px;
+  }
 }
