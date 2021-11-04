@@ -81,6 +81,17 @@ function App() {
     setContacts([...filteredContacts])
   }
 
+  // change contact
+  const changeContact = (e, id) => {
+    const contactsCopy = [...contacts];
+    contactsCopy.map(contact => {
+      if (contact.id === id) {
+        contact[e.target.name] = e.target.value
+      }
+    })
+    setContacts(contactsCopy);
+  }
+
   // allow to add add custom fields
   // allow to change a contact
   // record the history of changes
@@ -91,7 +102,7 @@ function App() {
       <h1>My Phone Book</h1>
       <ContactsNavigation showForm={showForm} form={form} />
       {form && <NewContactForm initContact={initContact} setInitContact={setInitContact} addContact={addContact} hideForm={hideForm} error={error}/>}
-      <ContactsList contacts={contacts} onDelete={onDelete} setInitContact={setInitContact}/>
+      <ContactsList contacts={contacts} onDelete={onDelete} changeContact={changeContact}/>
     </div>
   );
 }
