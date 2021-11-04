@@ -3,7 +3,7 @@ import ContactCard from "./ContactCard";
 import "./ContactsList.scss";
 
 
-const ContactsList = ({contacts, onDelete, setInitContact}) => {
+const ContactsList = ({ contacts, onDelete, changeContact}) => {
 
   const contactsParsed = contacts.map(contact => {
     return (
@@ -15,7 +15,7 @@ const ContactsList = ({contacts, onDelete, setInitContact}) => {
         phone={contact.phone}
         custom={contact.custom}
         onDelete={onDelete}
-        setInitContact={setInitContact}
+        changeContact={changeContact}
         contact={contact}
       />
     )
