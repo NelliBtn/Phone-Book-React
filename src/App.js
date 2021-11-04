@@ -77,16 +77,8 @@ function App() {
   // delete contact
   const onDelete = (e, id) => {
     e.preventDefault();
-    // create a copy of contacts
-    const contactsCopy = [...contacts];
-    // find a contact to delete by id
-    const deleteContact = contactsCopy.find(contact => contact.id === id);
-    const index = contactsCopy.indexOf(deleteContact);
-    contactsCopy.splice(index, 1);
-    setContacts([...contactsCopy]);
-    // or delete by filtering
-    // const filteredContacts = contacts.filter(contact => contact.id !== id);
-    // setContacts([...filteredContacts])
+    const filteredContacts = contacts.filter(contact => contact.id !== id);
+    setContacts([...filteredContacts])
   }
 
   // allow to add add custom fields
